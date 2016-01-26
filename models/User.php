@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use \app\components\utility;
+use \app\components;
 
 /**
  * This is the model class for table "Users".
@@ -44,6 +45,7 @@ class User extends \yii\db\ActiveRecord
             [['active', 'isDead', 'isDeleted'], 'boolean'],
             [['isDeleted'], 'safe'],
             [['personalCode'], 'validatePersonalCode'],
+            [['personalCode'], 'unique', 'targetAttribute' => 'personalCode'],
         ];
     }
 
@@ -79,7 +81,7 @@ class User extends \yii\db\ActiveRecord
      */
     public function validatePersonalCode($attribute, $params)
     {
-        if (\app\components\utility\Common::validatePersonalCode($this->$attribute) !== true)
+        if (utility\Common::validatePersonalCode($this->$attribute) !== true)
         {
             $this->addError($attribute, 'Personal code is not valid');
         }
@@ -90,7 +92,7 @@ class User extends \yii\db\ActiveRecord
      */
     public function getUserAge()
     {
-        return \app\components\utility\Common::getAgeByPersonalCode($this->personalCode);
+        return utility\Common::getAgeByPersonalCode($this->personalCode);
     }
 
 }

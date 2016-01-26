@@ -13,9 +13,29 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?php if ($showUserId === true) { ?>
-        <?= $form->field($model, 'userId')->textInput(['style' => 'width: 80px', 'maxlength' => 20, 'value' => Yii::$app->request->get('userId')]) ?>
-    <?php } ?>
+    <?php
+    $sValue = Yii::$app->request->get('userId');
+
+    if ($showUserId === true && !empty($sValue))
+    {
+        ?>
+        <?= $form->field($model, 'userId')->textInput([
+            'style' => 'width: 80px',
+            'maxlength' => 20,
+            'readonly' => 'readonly',
+            'value' => $sValue
+        ]) ?>
+    <?php
+    }
+    else
+    {
+    ?>
+    <?= $form->field($model, 'userId')->textInput([
+        'style' => 'width: 80px',
+    ]) ?>
+    <?php
+    }
+    ?>
 
     <?= $form->field($model, 'amount')->textInput(['style' => 'width: 100px', 'maxlength' => 20]) ?>
 

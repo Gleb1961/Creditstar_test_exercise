@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Age',
                 'value' => $userAge,
             ],
-            'email:ntext',
+            'email:email',
             'phone',
             'active:boolean',
             'isDead:boolean',

@@ -16,6 +16,8 @@ class UserController extends Controller
 {
     public function behaviors()
     {
+        $this->enableCsrfValidation = false;
+
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),

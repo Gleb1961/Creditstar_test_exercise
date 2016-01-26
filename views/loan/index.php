@@ -42,7 +42,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'dateApplied',
                 'format' => ['date', 'php:d.m.Y']
             ],
-            // 'dateLoanEnds',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
@@ -51,12 +50,3 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php ActiveForm::end(); ?>
 
 </div>
-
-<script type="text/javascript">
-    $("input[name*=dateApplied]").datepicker({
-        dateFormat: "yy-mm-dd",
-        changeMonth: true,
-        changeYear: true,
-        firstDay: 1
-    });
-</script>

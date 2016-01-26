@@ -38,6 +38,21 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'enableStrictParsing' => false,
+            'rules' => [
+                'users' => 'user/index',
+                'user/<id:\d+>' => 'user/view',
+                'user/update/<id:\d+>' => 'user/update',
+                'user/delete/<id:\d+>' => 'user/delete',
+                'loans' => 'loan/index',
+                'loan/<id:\d+>' => 'loan/view',
+                'loan/update/<id:\d+>' => 'loan/update',
+                'loan/delete/<id:\d+>' => 'loan/delete',
+            ],
+        ],
     ],
     'params' => $params,
 ];
