@@ -9,7 +9,7 @@ use yii\widgets\ActiveForm;
 
 ?>
 
-<div class="loan-form">
+<div class="view-block loan-form">
 
     <?php $form = ActiveForm::begin(); ?>
 

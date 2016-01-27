@@ -16,8 +16,8 @@ class m160125_235011_fix_sequences extends Migration
 		 */
 
 		$iMaxUserId = (new \yii\db\Query())
-		->from('Users')
-		->max('"userId"');
+			->from('Users')
+			->max('"userId"');
 
 		$this->execute('ALTER SEQUENCE "Users_userId_seq" RESTART WITH ' . ++$iMaxUserId);
 

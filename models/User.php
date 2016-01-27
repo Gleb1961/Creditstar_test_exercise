@@ -3,7 +3,7 @@
 namespace app\models;
 
 use Yii;
-use \app\components\utility;
+use \app\classes\utility;
 use \app\components;
 
 /**
