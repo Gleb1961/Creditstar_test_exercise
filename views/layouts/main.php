@@ -35,11 +35,10 @@ AppAsset::register($this);
 
             <?php
             NavBar::begin([
-                'brandLabel' => '<img src="/web/img/creditstar-logo-156x34.png" alt="Creditstar" class="top-logo">',
+                'brandLabel' => '<img src="' . Yii::$app->request->getBaseUrl() . '/img/creditstar-logo-156x34.png" alt="Creditstar" class="top-logo">',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-fixed-top navbar-white',
-                    // 'class' => 'navbar-inverse navbar-fixed-top',
                 ],
             ]);
             echo Nav::widget([

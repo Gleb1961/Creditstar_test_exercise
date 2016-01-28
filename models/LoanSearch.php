@@ -71,8 +71,8 @@ class LoanSearch extends Loan
             'amount'        => $this->amount,
             'interest'      => $this->interest,
             'duration'      => $this->duration,
-            'dateApplied'   => $this->dateApplied,
-            'dateLoanEnds'  => $this->dateLoanEnds,
+            'dateApplied'   => !empty($this->dateApplied) ? date("Y-m-d", strtotime($this->dateApplied)) : null,
+            'dateLoanEnds'  => !empty($this->dateLoanEnds) ? date("Y-m-d", strtotime($this->dateLoanEnds)) : null,
             'isDeleted'     => false
         ]);
 
